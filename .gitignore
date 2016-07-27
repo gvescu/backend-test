@@ -1,2 +1,11 @@
 .DS_Store
 backend/node_modules
+
+#.gitignore para la app Rails en app/events/
+
+app/events/.bundle
+app/events/db/*.sqlite3
+app/events/db/*.sqlite3-journal
+app/events/log/*
+!app/events/log/.keep
+app/events/tmp
