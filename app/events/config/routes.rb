@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
+  resources :events
+
   # LOGIN/LOGOUT/RECOVERY
   get '/login' => 'sessions#new', as: :new_login
   post '/login' => 'sessions#create', as: :login

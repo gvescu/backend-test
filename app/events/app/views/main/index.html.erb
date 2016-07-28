@@ -1,1 +1,20 @@
 <h1>Events</h1>
+
+<% @events.each do |event| %>
+<div>
+    <p>Share</p>
+    <p><%= event.event_datetime %></p>
+    <h2><%= event.title %></h2>
+    <%= link_to "View", event_path(event.id) %>
+</div>
+<% end %>
+
+<hr>
+
+<h2>Today's Highlight</h2>
+<% @highlights.each do |event| %>
+<div>
+    <h3><%= event.title %> <span><%= event.event_datetime %></span></h3>
+    <p><%= truncate event.description, length: 20 %></p>
+</div>
+<% end %>
