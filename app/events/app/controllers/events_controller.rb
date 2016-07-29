@@ -4,21 +4,42 @@ class EventsController < ApplicationController
     end
 
     def show
+        @event = Event.find(params[:id])
+        if @event.nil?
+            render text: 'not found', status: 404
+        end
     end
 
     def new
+        @event = Event.new
     end
 
     def create
+        @event = Event.new(event_params)
+        if @event.save
+            redirect_to event_path(@event.id)
+        else
+            render action: :new
+        end
     end
 
     def edit
+        @event = Event.find(params[:id])
     end
 
     def update
+        @event = Event.find(params[:id])
+        if @event.update_attribtues(event_params)
+            redirect_to event_path(@event.id)
+        else
+            render action: :new
+        end
     end
 
     def destroy
+        @event = Event.find(params[:id])
+        @event.destroy
+        redirect_to :events
     end
 
     private

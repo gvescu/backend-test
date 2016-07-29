@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="columns small-8 medium-9 large-10">
+        <%= f.label :title do %>
+        Title
+        <%= f.text_field :title %>
+        <% end %>
+    </div>
+    <div class="columns small-4 medium-3 large-2">
+        <br>
+        <%= f.label :starred do %>
+        <%= f.check_box :starred %>
+        Starred
+        <% end %>
+    </div>
+</div>
+
+<div class="row">
+    <div class="columns small-12">
+        <%= f.label :description do %>
+        Description
+        <%= f.trix_editor :description %>
+        <% end %>
+    </div>
+</div>
+
+<%= f.nested_fields_for :event_dates do |e| %>
+<div class="row nested-form">
+	<div class="columns small-2 medium-1">
+		<p class="text-center"><br><strong><%= e.remove_nested_fields_link raw("&times;"), class: 'button tiny' %></strong></p>
+	</div>
+	<div class="columns small-10 medium-5">
+		<%= e.label :event_datetime do %>
+			Date & Time
+			<%= e.datetime_local_field :event_datetime %>
+		<% end %>
+	</div>
+    <div class="columns small-12 medium-6">
+        <%= e.label :event_price do %>
+			Price
+            <div class="input-group">
+                <span class="input-group-label">$</span>
+                <%= e.text_field :event_price, { class: 'input-group-field' } %>
+            </div>
+		<% end %>
+    </div>
+	<hr>
+</div>
+<% end %>
+<div class="row">
+	<div class="columns small-12">
+		<p class="text-center"><%= f.add_nested_fields_link :event_dates, "Add date", class: 'button small' %></p>
+	</div>
+</div>
+
+<div class="row">
+    <div class="columns small-12 medium-6">
+        <%= f.label :location do %>
+        Location
+        <%= f.text_field :location %>
+        <% end %>
+    </div>
+    <div class="columns small-12 medium-6">
+        <%= f.label :image_url do %>
+        Image URL
+        <%= f.text_field :image_url %>
+        <% end %>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="columns small-12 text-center">
+        <%= f.submit "Save event", { class: "button" } %>
+    </div>
+</div>
