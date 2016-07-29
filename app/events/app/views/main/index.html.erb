@@ -2,7 +2,7 @@
 
 <% @events.each do |event| %>
 <div>
-    <p>Share</p>
+    <p><%= link_to "Share", "https://twitter.com/intent/tweet?text=Iré al #{event.title} @ #{event.event_datetime.to_time}&url=#{event_url(id:event.id)}" %></p>
     <p><%= event.event_datetime %></p>
     <h2><%= event.title %></h2>
     <%= link_to "View", event_path(event.id) %>

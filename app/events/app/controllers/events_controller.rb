@@ -1,6 +1,9 @@
 class EventsController < ApplicationController
 
+    before_action :authorize, except: [:show]
+
     def index
+        @events = Event.page(params[:p]).order("title ASC")
     end
 
     def show
@@ -29,7 +32,7 @@ class EventsController < ApplicationController
 
     def update
         @event = Event.find(params[:id])
-        if @event.update_attribtues(event_params)
+        if @event.update_attributes(event_params)
             redirect_to event_path(@event.id)
         else
             render action: :new

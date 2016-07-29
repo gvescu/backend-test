@@ -1,0 +1,11 @@
+<h1>All events</h1>
+
+<% @events.each do |event| %>
+<p><%= link_to event.title, edit_event_path(id: event.id) %> | <%= event.created_at %> | <%= link_to "Editar", edit_event_path(id: event.id) %> | <%= link_to "Eliminar", event_path(id: event.id), method: :delete, data: { confirm: "Are you sure?" } %></p>
+<% end %>
+
+<div class="row">
+	<div class="columns small-12 text-center">
+		<%= will_paginate @events, param_name: 'p' %>
+	</div>
+</div>
