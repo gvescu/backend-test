@@ -39,6 +39,9 @@ trix-editor:focus {
     overflow: hidden;
     width: 100%;
     max-height: 500px;
+    a {
+        cursor: zoom-in;
+    }
     img {
         width: 100%;
     }

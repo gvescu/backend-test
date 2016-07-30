@@ -20,7 +20,7 @@
     </div>
     <div class="columns large-5 medium-4 small-12">
         <div class="event-img">
-            <%= image_tag @event.image_url %>
+            <%= link_to (image_tag @event.image_url), @event.image_url, { target: "_blank" } %>
         </div>
         <table>
             <thead>

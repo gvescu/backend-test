@@ -50,3 +50,9 @@ section#login-row {
         }
     }
 }
+
+.field_with_errors {
+  input {
+      border: 1px solid red;
+  }
+}

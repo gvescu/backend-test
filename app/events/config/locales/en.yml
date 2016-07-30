@@ -5,3 +5,4 @@ en:
       event_date: "%e %b"
       event_time: "%R"
       eventlist_datetime: "%R - %D"
+      twitter: "%b %e - %R"

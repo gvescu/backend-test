@@ -17,13 +17,13 @@
             <div class="columns small-6 <%= l == c ? 'end' : '' %>" data-equalizer-watch>
                 <div class="event">
                     <div class="event-preview" style="background-image: url(<%= event.image_url %>)">
-                        <div class="event-share hide-for-small-only"><%= link_to (fa_icon "share-alt"), "https://twitter.com/intent/tweet?text=Iré al #{event.title} @ #{event.event_datetime.to_time}&url=#{event_url(id:event.id)}" %></div>
+                        <div class="event-share hide-for-small-only"><%= link_to (fa_icon "share-alt"), "https://twitter.com/intent/tweet?text=Iré al #{event.title} @ #{l(event.event_datetime.to_time, format: :twitter)}&url=#{event_url(id:event.id)}" %></div>
                         <div class="event-datetime"><%=l Time.parse(event.event_datetime), format: :home_datetime %></div>
                         <h2><%= truncate event.title, length: 35 %></h2>
                     </div>
                     <div class="event-view">
                         <%= link_to "View", event_path(event.id), { class: 'button' } %>
-                        <div class="event-share show-for-small-only"><%= link_to (fa_icon "share-alt"), "https://twitter.com/intent/tweet?text=Iré al #{event.title} @ #{event.event_datetime.to_time}&url=#{event_url(id:event.id)}" %></div>
+                        <div class="event-share show-for-small-only"><%= link_to (fa_icon "share-alt"), "https://twitter.com/intent/tweet?text=Iré al #{event.title} @ #{l(event.event_datetime.to_time, format: :twitter)}&url=#{event_url(id:event.id)}" %></div>
                     </div>
                 </div>
             </div>
