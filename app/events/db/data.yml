@@ -1,0 +1,120 @@
+
+---
+users:
+  columns:
+  - id
+  - name
+  - email
+  - password_digest
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Gustavo
+    - gvescu@gmail.com
+    - "$2a$10$m3UhYbzrYMoOCcofH5SB2u5hOQ9rnbTMMmrVPXU7R8PD368fB2CaG"
+    - '2016-07-30 01:17:44.781415'
+    - '2016-07-30 01:17:44.781415'
+
+---
+events:
+  columns:
+  - id
+  - title
+  - description
+  - location
+  - starred
+  - image_url
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - My birthday
+    - "<blockquote><em>Es tu cumpleaños, que seas muy feliz.<br>Y todos te deseamos,
+      te crezca la nariz...</em></blockquote><div>Y eso (?)</div>"
+    - Lambaré, Paraguay
+    - true
+    - http://i.imgur.com/TkcHjNZ.jpg
+    - '2016-07-30 01:21:12.798193'
+    - '2016-07-30 01:21:12.798193'
+  - - 2
+    - Evaluación
+    - "<div>A revisar todo a ver que tal.<br><br>Aviso ya de antemano que no me alcanzó
+      el tiempo para los tests. Fueron 4 días donde me pasé de acá para allá con otras
+      responsabilidades y no pude trabajar mucho en la prueba... :(<br><br>Igual me
+      alegro de haberla completado... O sea, al menos funciona :P</div>"
+    - Uruguay
+    - true
+    - http://i.imgur.com/O2NQNvP.jpg
+    - '2016-07-30 01:23:47.435019'
+    - '2016-07-30 01:23:47.435019'
+  - - 3
+    - Evento pasado
+    - "<div>Todo evento pasado fue mejor? Ni ahí<del>, pero eso dicen...<br></del><br>El
+      sistema va a mostrar en la portada sólo los eventos que ocurrirán en el futuro.
+      Los pasados se pueden ver en la lista de eventos.</div>"
+    - Algún lugar
+    - false
+    - http://i.imgur.com/Ggsm19H.jpg
+    - '2016-07-30 01:27:59.176074'
+    - '2016-07-30 01:38:11.272328'
+  - - 4
+    - Evento de prueba
+    - "<div>Es difícil esto de generar los datos...</div>"
+    - Casa
+    - true
+    - http://i.imgur.com/Be8qFNE.jpg
+    - '2016-07-30 01:30:01.639609'
+    - '2016-07-30 01:30:39.630240'
+  - - 5
+    - Evento de prueba (2)
+    - "<div>El diseño lo hice medio random, pero haciendo que quede algo lindo igual.<strong><br><br></strong>La
+      verdad podía haberme esmerado más en este tema del texto sobre las imágenes
+      en la grilla, pero como había mencionado, no tuve demasiado tiempo para trabajar
+      en este examen :(</div>"
+    - Casa
+    - true
+    - http://i.imgur.com/x9UGQ8y.jpg
+    - '2016-07-30 01:33:38.921891'
+    - '2016-07-30 01:34:11.478625'
+
+---
+event_dates:
+  columns:
+  - id
+  - event_id
+  - event_datetime
+  - event_price
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - 1
+    - '2016-08-02 18:00:00.000000'
+    - 50.0
+    - '2016-07-30 01:21:12.812179'
+    - '2016-07-30 01:21:12.812179'
+  - - 2
+    - 2
+    - '2016-07-30 12:00:00.000000'
+    - 0.0
+    - '2016-07-30 01:23:47.450019'
+    - '2016-07-30 01:23:47.450019'
+  - - 3
+    - 3
+    - '2016-07-29 18:00:00.000000'
+    - 10.0
+    - '2016-07-30 01:27:59.183085'
+    - '2016-07-30 01:27:59.183085'
+  - - 4
+    - 4
+    - '2016-08-01 00:00:00.000000'
+    - 20.0
+    - '2016-07-30 01:30:39.640753'
+    - '2016-07-30 01:30:39.640753'
+  - - 5
+    - 5
+    - '2016-08-01 01:00:00.000000'
+    - 20.0
+    - '2016-07-30 01:34:11.495125'
+    - '2016-07-30 01:34:11.495125'
