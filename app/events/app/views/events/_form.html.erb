@@ -18,7 +18,7 @@
     <div class="columns small-12">
         <%= f.label :description do %>
         Description
-        <%= f.trix_editor :description %>
+        <%= f.trix_editor :description, rows: 4 %>
         <% end %>
     </div>
 </div>
@@ -26,7 +26,7 @@
 <%= f.nested_fields_for :event_dates do |e| %>
 <div class="row nested-form">
 	<div class="columns small-2 medium-1">
-		<p class="text-center"><br><strong><%= e.remove_nested_fields_link raw("&times;"), class: 'button tiny' %></strong></p>
+		<p class="text-center"><br><strong><%= e.remove_nested_fields_link (fa_icon "times"), class: 'button small' %></strong></p>
 	</div>
 	<div class="columns small-10 medium-5">
 		<%= e.label :event_datetime do %>
@@ -48,7 +48,7 @@
 <% end %>
 <div class="row">
 	<div class="columns small-12">
-		<p class="text-center"><%= f.add_nested_fields_link :event_dates, "Add date", class: 'button small' %></p>
+		<p class="text-center"><%= f.add_nested_fields_link :event_dates, "Add date", class: 'button' %></p>
 	</div>
 </div>
 
@@ -71,6 +71,6 @@
 
 <div class="row">
     <div class="columns small-12 text-center">
-        <%= f.submit "Save event", { class: "button" } %>
+        <%= f.submit "Save event", { class: "button large" } %>
     </div>
 </div>

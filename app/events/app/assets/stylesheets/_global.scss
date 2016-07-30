@@ -1,0 +1,52 @@
+body {
+    font-family: 'Sanchez', serif;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Copse', sans-serif;
+    font-weight: bold;
+}
+
+.button {
+    font-family: 'Sanchez';
+    font-weight: bold;
+    background-color: #003D65;
+    &:hover {
+        background-color: #00243C;
+    }
+    &:focus {
+        background-color: #003D65;
+    }
+}
+
+label {
+    font-weight: bold;
+}
+
+.header {
+    border-bottom: 1px solid #F7F7F7;
+    margin-bottom: 2rem;
+}
+
+.pagination {
+	em {
+		font-style: normal;
+	}
+	a {
+		display: inline-block;
+	}
+}
+
+section#login-row {
+    background: #003D65;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    a {
+        color: #CCC;
+        transition: color 0.2s;
+        &:hover {
+            color: white;
+        }
+    }
+}

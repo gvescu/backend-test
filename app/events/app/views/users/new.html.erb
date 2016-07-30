@@ -1,11 +1,37 @@
-<h1>Register</h1>
+<div class="row header">
+  <div class="columns small-12">
+    <h1>Signup</h1>
+  </div>
+</div>
 
 <%= form_for :user, url: :register do |f| %>
-
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
+<div class="row">
+  <div class="columns small-12 medium-10 medium-offset-1 large-6 large-offset-3 end">
+    <%= f.label :name do %>
+    Name:
+    <%= f.text_field :name %>
+    <% end %>
+  </div>
+  <div class="columns small-12 medium-10 medium-offset-1 large-6 large-offset-3 end">
+    <%= f.label :email do %>
+    Email:
+    <%= f.email_field :email %>
+    <% end %>
+  </div>
+  <div class="columns small-12 medium-10 medium-offset-1 large-6 large-offset-3 end">
+    <%= f.label :password do %>
+    Password:
+    <%= f.password_field :password %>
+    <% end %>
+  </div>
+  <div class="columns small-12 medium-10 medium-offset-1 large-6 large-offset-3 end">
+    <%= f.label :password_confirmation do %>
+    Password confirmation:
+    <%= f.password_field :password %>
+    <% end %>
+  </div>
+  <div class="columns small-12 medium-10 medium-offset-1 large-6 large-offset-3 end text-center">
+    <%= f.submit "Signup", { class: "button large" } %>
+  </div>
+</div>
 <% end %>

@@ -1,4 +1,13 @@
-<h1>Edit event</h1>
+<div class="row header">
+    <div class="columns small-12">
+        <h1>
+            Edit event
+        </h1>
+		<p>
+            <%= link_to (fa_icon "arrow-left", text: "Back"), :back %> | <%= link_to (fa_icon "home", text: "Home"), :root %>
+        </p>
+    </div>
+</div>
 
 <%= form_for(@event) do |f| %>
 	<%= render partial: 'form', locals: { f: f } %>

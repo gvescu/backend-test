@@ -6,9 +6,5 @@ class MainController < ApplicationController
         @events = Event.with_event_datetime.limit(6)
         @highlights = Event.with_event_datetime.where("starred = 't' and event_datetime between ? and ?", today, tomorrow)
     end
-
-    def load_more_events
-
-    end
-
+    
 end

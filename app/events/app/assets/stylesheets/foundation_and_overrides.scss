@@ -1,5 +1,7 @@
 @charset 'utf-8';
 
+@import 'https://fonts.googleapis.com/css?family=Copse|Sanchez:400,400i';
+
 @import 'settings';
 @import 'foundation';
 
@@ -50,3 +52,5 @@
 //
 @include motion-ui-transitions;
 @include motion-ui-animations;
+
+@import 'global';

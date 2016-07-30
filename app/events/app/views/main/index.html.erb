@@ -1,24 +1,45 @@
-<h1>Events</h1>
-
-<% @events.each do |event| %>
-<div>
-    <p><%= link_to "Share", "https://twitter.com/intent/tweet?text=Iré al #{event.title} @ #{event.event_datetime.to_time}&url=#{event_url(id:event.id)}" %></p>
-    <p><%= event.event_datetime %></p>
-    <h2><%= event.title %></h2>
-    <%= link_to "View", event_path(event.id) %>
+<div class="row header">
+    <div class="columns small-12">
+        <h1>
+            Events
+            <% if current_user %>
+            <span class="small"><%= link_to (fa_icon "plus", text: "New event"), :new_event %></span>
+            <% end %>
+        </h1>
+    </div>
 </div>
-<% end %>
+
+<div class="row">
+    <div class="columns large-7 medium-8 small-12">
+        <div class="row grid" data-equalizer>
+            <% l = @events.length; c = 1 %>
+            <% @events.each do |event| %>
+            <div class="columns small-6 <%= l == c ? 'end' : '' %>" data-equalizer-watch>
+                <div class="event">
+                    <div class="event-preview" style="background-image: url(<%= event.image_url %>)">
+                        <div class="event-share hide-for-small-only"><%= link_to (fa_icon "share-alt"), "https://twitter.com/intent/tweet?text=Iré al #{event.title} @ #{event.event_datetime.to_time}&url=#{event_url(id:event.id)}" %></div>
+                        <div class="event-datetime"><%=l Time.parse(event.event_datetime), format: :home_datetime %></div>
+                        <h2><%= truncate event.title, length: 35 %></h2>
+                    </div>
+                    <div class="event-view">
+                        <%= link_to "View", event_path(event.id), { class: 'button' } %>
+                        <div class="event-share show-for-small-only"><%= link_to (fa_icon "share-alt"), "https://twitter.com/intent/tweet?text=Iré al #{event.title} @ #{event.event_datetime.to_time}&url=#{event_url(id:event.id)}" %></div>
+                    </div>
+                </div>
+            </div>
+            <% c += 1; end %>
+        </div>
+    </div>
+    <div class="columns large-5 medium-4 small-12">
+        <h2>Today's Highlights</h2>       
+        <% @highlights.each do |event| %>
+        <div class="highlight">
+            <div class="img" style="background-image: url(<%= event.image_url %>)"></div>
+            <h3><%= link_to event.title, event_path(id:event.id) %> <span class="small"><%=l Time.parse(event.event_datetime), format: :home_datetime %></span></h3>
+            <p class="hide-for-small-only"><%= event.location %></p>
+        </div>
+        <% end %> 
+    </div>
+</div>
 
 <hr>
-
-<h2>Today's Highlight</h2>
-<% @highlights.each do |event| %>
-<div>
-    <h3><%= event.title %> <span><%= event.event_datetime %></span></h3>
-    <p><%= truncate event.description, length: 20 %></p>
-</div>
-<% end %>
-
-<% if current_user %>
-<%= link_to "New event", :new_event %>
-<% end %>
